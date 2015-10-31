@@ -5,9 +5,12 @@ require 'slim'
 require 'sass'
 
 require './lib/authorize'
+require './lib/translator'
 
 get '/' do
-  @msg = Authorize.get_access_token
+  token = Authorize.get_access_token
+  translator = Translator.new(token)
+  @msg = translator.translate('hello nameless')
   slim :index
 end
 
