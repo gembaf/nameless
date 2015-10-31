@@ -4,8 +4,10 @@ require 'sinatra'
 require 'slim'
 require 'sass'
 
+require './lib/authorize'
+
 get '/' do
-  @msg = ENV['HOGE']
+  @msg = Authorize.get_access_token
   slim :index
 end
 
