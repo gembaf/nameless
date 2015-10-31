@@ -5,7 +5,7 @@ require 'slim'
 require 'sass'
 
 get '/' do
-  @msg = 'hello nameless'
+  @msg = ENV['HOGE']
   slim :index
 end
 

@@ -1,0 +1,2 @@
+require 'dotenv-heroku/tasks'
+
