@@ -10,7 +10,7 @@ require './lib/translator'
 get '/' do
   token = Authorize.get_access_token
   translator = Translator.new(token)
-  @msg = translator.translate('hello nameless')
+  @msg = translator.translate_from_en('black')
   slim :index
 end
 
